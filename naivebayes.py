@@ -5,5 +5,7 @@ Y = np.array([1, 2, 3, 4])
 clf = GaussianNB()
 clf.fit(X, Y)
 a = input("enter the angle")
-p = clf.predict([[a]])
+if a > 360:
+    b = a - 360
+p = clf.predict([[b]])
 print '%d is lies in quadrant %d' %(a,p[0])
